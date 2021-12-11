@@ -1,0 +1,52 @@
+@import 'vars.scss';
+*{
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+
+}
+body{
+    background: $body-bg;
+}
+.main-block{
+    height: 60vh;
+    width: 50%;
+    background: $main-bg;
+    border-radius: 2%;
+    margin-top: 20vh;
+    &__name{
+        text-align: center;
+        padding: 2%;
+    }
+    &__content{
+        width: 70%;
+        height: 70%;
+        margin-top: 2%;
+    }
+}
+.content{
+    &__text{
+        text-align: center;
+        font-size: 20px;
+    }
+    &__block-numbers-min, &__block-numbers-max, &__block-attempts, &__block-answer{
+        display: table; 
+        margin: 5% auto;
+        &--inpt{
+            background-color: $inpt-bg;
+            border-radius: 4%;
+        }
+    }
+    &__buttons{
+        height: 15%;
+        &--btn{
+            width: 30%;
+            height: 100%;
+            border: none;
+            border-radius: 4%;
+            margin: auto 10%;
+            float: left;
+            font-size: 100%;
+        }
+    }
+}
