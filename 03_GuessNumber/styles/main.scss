@@ -9,8 +9,7 @@ body{
     background: $body-bg;
 }
 .main-block{
-    height: 60vh;
-    width: 50%;
+    width: 40%;
     background: $main-bg;
     border-radius: 2%;
     margin-top: 20vh;
@@ -21,7 +20,9 @@ body{
     &__content{
         width: 70%;
         height: 70%;
+        height: auto;
         margin-top: 2%;
+        padding: 2%;
     }
 }
 .content{
@@ -29,7 +30,8 @@ body{
         text-align: center;
         font-size: 20px;
     }
-    &__block-numbers-min, &__block-numbers-max, &__block-attempts, &__block-answer{
+    &__block-numbers-min, &__block-numbers-max, &__block-attempts, &__block-answer,
+     &__buttons{
         display: table; 
         margin: 5% auto;
         &--inpt{
@@ -38,13 +40,14 @@ body{
         }
     }
     &__buttons{
-        height: 15%;
+        height: 50px;
+        width: 100%;
         &--btn{
-            width: 30%;
+            width: 25%;
             height: 100%;
             border: none;
             border-radius: 4%;
-            margin: auto 10%;
+            margin: 0 4%;
             float: left;
             font-size: 100%;
         }

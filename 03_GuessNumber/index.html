@@ -9,7 +9,6 @@
 
     <title>Guess Number</title>
 </head>
-
 <body>
    <div class="main-block">
        <h1 class="main-block__name">Guess Number</h1>
@@ -17,29 +16,29 @@
            <p class="content__text">Выберите диапозон в котором будете угадывать число</p>
            <div class="content__block-numbers-min">
                <label for="minValue">От: </label>
-            <input class="content__block-numbers-min--inpt" type="number" id="minValue" min="1" max="200" value="1" >
-           </div>
-        <div class="content__block-numbers-max">
-            <label for="maxValue">До: </label>
-            <input class="content__block-numbers-max--inpt" type="number" id="maxValue" min="1" max="200" value="100">
+               <input class="content__block-numbers-min--inpt" type="number" id="minValue" min="1" max="200" value="1" >
+            </div>
+            <div class="content__block-numbers-max">
+                <label for="maxValue">До: </label>
+                <input class="content__block-numbers-max--inpt" type="number" id="maxValue" min="1" max="200" value="100">
+            </div>
+            <div class="content__block-attempts">
+                <label for="attempts">Количество попыток: </label>
+                <input class="content__block-attempts--inpt" type="number" id="attempts" min="1" max="15" value="5">
+            </div>
+            <div class="content__block-answer">
+                <label for="answer">Ваш вариант: </label>
+                <input class="content__block-answer--inpt" type="number" id="answer" min="1" max="200" >
+            </div>
+            <p class="content__text" id="helloText"></p>
+            <p class="content__text" id="infoText"></p>
+            <div class="content__buttons">
+                <button class="content__buttons--btn" id="generate">Generate</button>
+                <button class="content__buttons--btn" id="play">Play</button>
+                <button class="content__buttons--btn" id="exit">Exit</button>
+            </div>
         </div>
-        <div class="content__block-attempts">
-            <label for="attempts">Количество попыток: </label>
-            <input class="content__block-attempts--inpt" type="number" id="attempts" min="1" max="15" value="5">
-        </div>
-        <div class="content__text" id="info">Some info</div>
-        <div class="content__block-answer">
-            <label for="answer">Ваш вариант: </label>
-            <input class="content__block-answer--inpt" type="number" id="answer" min="1" max="200" >
-        </div>
-        <div class="content__buttons">
-            <button class="content__buttons--btn" id="generate">Generate</button>
-            <button class="content__buttons--btn" id="exit">Exit</button>
-        </div>
-       </div>
-       
    </div>
     <script src="/dist/app.js"></script>
 </body>
-
 </html>
