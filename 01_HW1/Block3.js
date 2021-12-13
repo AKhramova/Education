@@ -7,7 +7,7 @@ function checkArray(array) {
     if (array.length === 0) {
         return false
     }
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         if (isNaN(array[i]) === true) {
             return false;
         }
@@ -24,8 +24,8 @@ function isMinElement(array) {
 }
 
 function minElement(array) {
-    var min = array[0];
-    for (var i = 0; i < array.length; i++) {
+    let min = array[0];
+    for (let i = 0; i < array.length; i++) {
         if (min > array[i]) {
             min = array[i];
         }
@@ -43,8 +43,8 @@ function isMaxElement(array) {
 }
 
 function maxElement(array) {
-    var max = array[0];
-    for (var i = 0; i < array.length; i++) {
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
         if (max < array[i]) {
             max = array[i];
         }
@@ -62,9 +62,9 @@ function isMinIndex(array) {
 }
 
 function minIndex(array) {
-    var min = array[0];
-    var index = 0;
-    for (var i = 0; i < array.length; i++) {
+    let min = array[0];
+    let index = 0;
+    for (let i = 0; i < array.length; i++) {
         if (min > array[i]) {
             min = array[i];
             index = i;
@@ -83,9 +83,9 @@ function isMaxIndex(array) {
 }
 
 function maxIndex(array) {
-    var max = array[0];
-    var index = 0;
-    for (var i = 0; i < array.length; i++) {
+    let max = array[0];
+    let index = 0;
+    for (let i = 0; i < array.length; i++) {
         if (max < array[i]) {
             max = array[i];
             index = i;
@@ -97,8 +97,8 @@ function maxIndex(array) {
 //5
 function isSummaOddIndex(array) {
     if (checkArray(array) !== false) {
-        var summa = 0;
-        for (var i = 1; i < array.length; i++) {
+        let summa = 0;
+        for (let i = 1; i < array.length; i++) {
             summa += array[i++];
         }
         return summa;
@@ -110,8 +110,8 @@ function isSummaOddIndex(array) {
 //6
 function reverseArray(array) {
     if (checkArray(array) !== false) {
-        var newArray = [];
-        for (var i = array.length - 1; i >= 0; i--) {
+        let newArray = [];
+        for (let i = array.length - 1; i >= 0; i--) {
             newArray += array[i]
         }
         return newArray;
@@ -130,8 +130,8 @@ function checkCountOddElements(array) {
 }
 
 function countOddElements(array) {
-    var count = 0;
-    for (var i = 0; i < array.length; i++) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 === 1) {
             count++;
         }
@@ -149,13 +149,13 @@ function checkReverseArrayHalf(array) {
 }
 
 function reverseArrayHalf(array) {
-    var halfFirst = Math.floor(array.length / 2);
-    var halfSecond = array.length - halfFirst;
-    var newArray = [];
-    for (var i = 0; i < halfSecond; i++) {
+    let halfFirst = Math.floor(array.length / 2);
+    let halfSecond = array.length - halfFirst;
+    let newArray = [];
+    for (let i = 0; i < halfSecond; i++) {
         newArray[i] = array[i + halfFirst];
     }
-    for (var i = 0; i < halfFirst; i++) {
+    for (let i = 0; i < halfFirst; i++) {
         newArray[i + halfSecond] = array[i];
     }
     return newArray;
@@ -178,8 +178,8 @@ function bubbleSort(array, n) {
     if (n === 1) {
         return array;
     } else {
-        var intermidiateValue;
-        for (var i = 0; i < array.length; i++) {
+        let intermidiateValue;
+        for (let i = 0; i < array.length; i++) {
             if (array[i] > array[i + 1]) {
                 intermidiateValue = array[i];
                 array[i] = array[i + 1];
@@ -191,15 +191,15 @@ function bubbleSort(array, n) {
 }
 
 function selectSort(array, n) {
-    for (var i = 0; i < array.length; i++) {
-        var min = i;
-        for (var j = i; j < array.length; j++) {
+    for (let i = 0; i < array.length; i++) {
+        let min = i;
+        for (let j = i; j < array.length; j++) {
             if (array[j] < array[min]) {
                 min = j;
             }
         }
         if (min !== i) {
-            var intermidiateValue = array[i];
+            let intermidiateValue = array[i];
             array[i] = array[min];
             array[min] = intermidiateValue;
         }
@@ -208,9 +208,9 @@ function selectSort(array, n) {
 }
 
 function insertSort(array) {
-    for (var i = 0; i < array.length; i++) {
-        var current = array[i];
-        var j = i;
+    for (let i = 0; i < array.length; i++) {
+        let current = array[i];
+        let j = i;
         while (j > 0 && array[j - 1] > current) {
             array[j] = array[j - 1];
             j--;
@@ -222,15 +222,15 @@ function insertSort(array) {
 
 //quick sort
 function chanchingValue(array, first, second) {
-    var current = array[first];
+    let current = array[first];
     array[first] = array[second];
     array[second] = current;
 }
 
 function separationValues(array, left, right) {
-    var current = array[Math.floor((right + left) / 2)];
-    var i = left;
-    var j = right;
+    let current = array[Math.floor((right + left) / 2)];
+    let i = left;
+    let j = right;
     while (i <= j) {
         while (array[i] < current) {
             i++;
@@ -249,7 +249,7 @@ function separationValues(array, left, right) {
 
 function quickSort(array, left, right) {
     if (array.length > 1) {
-        var index = separationValues(array, left, right);
+        let index = separationValues(array, left, right);
         if (left < index - 1) {
             quickSort(array, left, index - 1);
         }
@@ -262,11 +262,11 @@ function quickSort(array, left, right) {
 
 // shell sort
 function shellSort(array) {
-    var midLenght = Math.floor(array.length / 2);
+    let midLenght = Math.floor(array.length / 2);
     while (midLenght >= 1) {
-        for (var i = midLenght; i < array.length; i++) {
-            var current = array[i];
-            var j = i;
+        for (let i = midLenght; i < array.length; i++) {
+            let current = array[i];
+            let j = i;
             while (j > 0 && array[j - midLenght] > current) {
                 array[j] = array[j - midLenght];
                 j -= midLenght;

@@ -1,6 +1,6 @@
 // Conditional Operators
-function isNumbers(x1, x2, y1, y2) {
-    for (var i = 0; i < arguments.length; i++) {
+function isNumbers() {
+    for (let i = 0; i < arguments.length; i++) {
         if (isNaN(arguments[i]) === true) {
             return false;
         }

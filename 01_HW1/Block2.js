@@ -1,4 +1,4 @@
-var {
+let {
     isNumbers
 } = require('./Block1');
 //Cycles
@@ -16,8 +16,8 @@ function resultSummaRange(startNumber, finalNumber) {
 }
 
 function summaInRange(startNumber, finalNumber) {
-    var result = 0;
-    for (var i = startNumber; i <= finalNumber; i++) {
+    let result = 0;
+    for (let i = startNumber; i <= finalNumber; i++) {
         result += i;
     }
     return result;
@@ -36,7 +36,7 @@ function resultPrimeNumber(number) {
 }
 
 function checkPrimeNumber(number) {
-    for (var i = 2; i <= number; i++) {
+    for (let i = 2; i <= number; i++) {
         if (number % i === 0) {
             return false;
         } else {
@@ -58,13 +58,13 @@ function checkNumberSquareRoot(number) {
 }
 
 function squareRootConsistentSelection(number) {
-    for (var i = 0; i * i <= number; i++) {
+    for (let i = 0; i * i <= number; i++) {
     }
     return i - 1;
 }
 
 function squareRootBinarySearch(number) {
-    var intermediateNumber = number;
+    let intermediateNumber = number;
     while (intermediateNumber * intermediateNumber > number) {
         intermediateNumber /= 2;
     }
@@ -89,7 +89,7 @@ function checkNumbers(number) {
 }
 
 function factorialNumber(number) {
-    var result = 1;
+    let result = 1;
     while (number !== 0) {
         result *= number;
         number--;
@@ -115,7 +115,7 @@ function checkSummaDigits(number) {
     return summaDigits(number);
 }
 function summaDigits(number) {
-    var summa = 0;
+    let summa = 0;
     while (number) {
         summa += number % 10;
         number = (number - number % 10) / 10;
@@ -134,7 +134,7 @@ function checkNewNumber(number) {
     return newNumber(number);
 }
 function newNumber(number) {
-    var result = '';
+    let result = '';
     while (number) {
         result += number % 10;
         number = (number - number % 10) / 10;
