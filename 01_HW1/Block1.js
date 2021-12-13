@@ -35,7 +35,7 @@ function checkCoordinates(x, y) {
             return 'Start coordinates';
         case x > 0 && y > 0:
             return 'first';
-        case x < 0 && y > 00:
+        case x < 0 && y > 0:
             return 'second';
         case x < 0 && y < 0:
             return 'third';
