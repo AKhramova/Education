@@ -1,7 +1,7 @@
 {
-  "name": "webpacktemplete",
+  "name": "guess-snumber",
   "version": "1.0.0",
-  "description": "webpack settings",
+  "description": "homework 3 guess number",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
