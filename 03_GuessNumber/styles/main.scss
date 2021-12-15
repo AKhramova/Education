@@ -3,41 +3,51 @@
     margin: auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: none;
-
+    padding: 1%;
 }
-body{
+input:focus{
+     outline: 2px solid $inpt-focus;
+}
+html, body{
     background: $body-bg;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    width: 100%;
 }
 .main-block{
     width: 40%;
     background: $main-bg;
     border-radius: 2%;
-    margin-top: 20vh;
     &__name{
-        text-align: center;
-        padding: 2%;
+        display: flex;
+        justify-content: center;
     }
     &__content{
         width: 70%;
-        height: 70%;
         height: auto;
-        margin-top: 2%;
-        padding: 2%;
     }
 }
 .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__text{
         text-align: center;
         font-size: 20px;
     }
     &__block-numbers-min, &__block-numbers-max, &__block-attempts, &__block-answer,
-     &__buttons{
-        display: table; 
-        margin: 5% auto;
+    &__buttons{
+        display: flex; 
         &--inpt{
             background-color: $inpt-bg;
             border-radius: 4%;
-        }
+            margin-left: 7%;
+            &--border{
+            border: 2px solid $inpt-outline;
+            }
+        }   
     }
     &__buttons{
         height: 50px;
@@ -47,9 +57,14 @@ body{
             height: 100%;
             border: none;
             border-radius: 4%;
-            margin: 0 4%;
-            float: left;
             font-size: 100%;
+            background: $body-bg;
+            &:disabled{
+                background: rgba(228, 225, 225, 0.5)
+            }
+            &:hover{
+                box-shadow: 1px 2px 3px black;
+            }
         }
     }
 }
