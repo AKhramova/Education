@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/app.css">
-
-    <title>Guess Number</title>
+    <title>GuessNumber</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-   <div class="main-block">
-       <h1 class="main-block__name">Guess Number</h1>
-       <div class="main-block__content content">
-           <p class="content__text">Выберите диапозон в котором будете угадывать число</p>
-           <div class="content__block-numbers-min">
-               <label for="minValue">От: </label>
-               <input class="content__block-numbers-min--inpt" type="number" id="minValue" min="1" max="200" value="1" >
+    <div class="main-block">
+        <h1 class="main-block__name">Guess Number</h1>
+        <div class="main-block__content content">
+            <p class="content__text">Выберите диапозон в котором будете угадывать число</p>
+            <div class="content__block-numbers-min">
+                <label for="minValue">От: </label>
+                <input class="content__block-numbers-min--inpt" type="number" id="minValue" min="1" max="200" value="1">
             </div>
             <div class="content__block-numbers-max">
                 <label for="maxValue">До: </label>
-                <input class="content__block-numbers-max--inpt--border" type="number" id="maxValue" min="1" max="200" value="100">
+                <input class="content__block-numbers-max--inpt--border" type="number" id="maxValue" min="1" max="200"
+                    value="100">
             </div>
             <div class="content__block-attempts">
                 <label for="attempts">Попытки: </label>
@@ -28,7 +27,7 @@
             </div>
             <div class="content__block-answer">
                 <label for="answer">Ответ: </label>
-                <input class="content__block-answer--inpt--border" type="number" id="answer" min="1" max="200" >
+                <input class="content__block-answer--inpt--border" type="number" id="answer" min="1" max="200">
             </div>
             <p class="content__text" id="helloText"></p>
             <p class="content__text" id="infoText"></p>
@@ -38,7 +37,7 @@
                 <button class="content__buttons--btn" id="exit">Exit</button>
             </div>
         </div>
-   </div>
-    <script src="/dist/app.js"></script>
+    </div>
+    <script src="../logic/logic.js"></script>
 </body>
 </html>

@@ -1,10 +1,19 @@
-import './const'
+const minValue = document.getElementById('minValue');
+const maxValue = document.getElementById('maxValue');
+const attempts = document.getElementById('attempts');
+const answer = document.getElementById('answer');
+const generate = document.getElementById('generate');
+const play = document.getElementById('play');
+const exit = document.getElementById('exit');
+const helloText = document.getElementById('helloText');
+const infoText = document.getElementById('infoText');
+
 const sad = '\u{2639}';
 let count = 0;
 let rand = null;
 
 function isValid(min, max, attempt) {
-    for (let i = 0; i < arguments.length; i++){
+    for (let i = 0; i < arguments.length; i++) {
         if (arguments[i] % 1 !== 0) {
             return false;
         }
@@ -77,15 +86,19 @@ play.addEventListener('click', () => {
     let attemptValue = Number(attempts.value);
     let answerValue = Number(answer.value);
     count++;
-    if (isValidAnswer(minValue.value, maxValue.value, answerValue)){
+    if (isValidAnswer(minValue.value, maxValue.value, answerValue)) {
         return checkAnswer(count, attemptValue, rand, answerValue);
     } else {
         infoText.innerHTML = 'Вы допустили ошубку при вводу ответа' + sad;
         count--;
-    } 
+    }
 })
 
 generate.addEventListener('click', () => {
     generateFunction(minValue.value, maxValue.value, attempts.value, sad);
 });
 
+//exit button
+exit.addEventListener('click', () => {
+    window.location.reload();
+})
