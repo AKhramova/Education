@@ -1,13 +1,3 @@
-const minValue = document.getElementById('minValue');
-const maxValue = document.getElementById('maxValue');
-const attempts = document.getElementById('attempts');
-const answer = document.getElementById('answer');
-const generate = document.getElementById('generate');
-const play = document.getElementById('play');
-const exit = document.getElementById('exit');
-const helloText = document.getElementById('helloText');
-const infoText = document.getElementById('infoText');
-
 const sad = '\u{2639}';
 let count = 0;
 let rand = null;
