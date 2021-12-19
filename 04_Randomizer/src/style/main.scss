@@ -1,0 +1,66 @@
+@import './const.scss';
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background;
+}
+.content{
+    width: 500px;
+    border-radius: 20px;
+    background-color: $bg-main-block;
+    justify-content: center;
+    &__name{
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 200%;
+    }
+    &__block-main{
+        margin: auto;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.block-main{
+    &__label{
+        &--min, --max{
+            margin: $main-margin;
+        }
+    }
+    &__info{
+        text-align: center;
+    }
+    &__button{
+        &--generate, &--reset{
+            height: 30px;
+            width: 50%;
+            border-radius: 7px;
+            margin: $main-margin;
+            outline: none;
+            cursor: pointer;
+            background-color: $bg-button;
+            &:hover{
+                box-shadow: 1px 2px 3px black;
+            }
+            &:disabled{
+                background-color: $bg-disabled;
+            }
+        }
+    }
+}
+input{
+    &[name=inp]{
+        border-color: $input-border;
+    }
+    &:focus{
+        outline: 2px solid $input-focus;
+    }
+}

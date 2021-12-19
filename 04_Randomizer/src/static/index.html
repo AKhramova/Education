@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessNumber</title>
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+
+<body>
+    <section class="content">
+        <h1 class="content__name">Randomizer</h1>
+        <section class="content__block-main block-main">
+            <label class="block-main__label--min">Min <input type="number" value="1" id="min"></label>
+            <label class="block-main__label--max">Max <input type="number" value="10" name="inp" id="max"></label>
+            <button class="block-main__button--generate" id="generate">Generate</button>
+            <div class="block-main__info" id="info"></div>
+            <button class="block-main__button--reset" id="reset">Reset</button>
+        </section>
+    </section>
+
+    <script src="../logic/index.js"></script>
+</body>
+
+</html>
