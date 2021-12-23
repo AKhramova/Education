@@ -1,7 +1,6 @@
     //Functions
 let {
-    checkNumberSquareRoot,
-    checkNumbers
+    checkNumberSquareRoot
 } = require('./Block2');
 
 let {
@@ -21,7 +20,7 @@ function checkNumber(number) {
 }
 
 //1
-function nameDay(number) {
+function getNameDay(number) {
     let arrayDays = ['Mon', 'Thues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
     if (number > arrayDays.length) {
         return false;
@@ -34,15 +33,6 @@ function nameDay(number) {
 }
 
 //2
-
-function checkNumbersToString(number) {
-    if (checkNumbers(number) !== false) {
-        return numbersToString(number);
-    } else {
-        return false;
-    }
-}
-
 function numbersToString(number) {
     let str = '';
     let hundreds = ['', 'сто', 'двести', 'триста', 'четыреста',
@@ -54,6 +44,9 @@ function numbersToString(number) {
     let units = ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'];
     let indexOfhundreds, indexElevenToNineteen, indexDozens, indexUnits;
 
+    if (checkNumber(number) === false) {
+        return false;
+    }
     if (number === 0) {
         return 'ноль';
     }
@@ -64,7 +57,7 @@ function numbersToString(number) {
     }
     if (number > 10 && number < 20) {
         indexElevenToNineteen = number % 10;
-        str += elevenToNineteen[indexElevenToNineteen] + ' ';
+        str += elevenToNineteen[indexElevenToNineteen];
     } else if (number === 10 || number >= 20) {
         indexDozens = Math.floor(number / 10);
         str += dozens[indexDozens] + ' ';
@@ -78,19 +71,12 @@ function numbersToString(number) {
 }
 
 //3
-
-function checkStringToNumber(string) {
-    if (typeof string === 'string') {
-        return stringToNumber(string);
-    } else {
+function stringToNumber(string) {
+    if (typeof string !== 'string') {
         return false;
     }
-}
-
-function stringToNumber(string) {
     let arrayString = string.split(' ');
     let result = 0;
-
     let arrayHundreds = ['', 'сто', 'двести', 'триста', 'четыреста',
         'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'];
     let arrayDozens = ['', '', 'двадцать', 'тридцать', 'сорок',
@@ -98,7 +84,7 @@ function stringToNumber(string) {
     let arrayFirstNumber = ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять',
         'десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать',
         'семнадцать', 'восемнадцать', 'девятнадцать'];
-
+    
     for (let i = 0; i < arrayString.length; i++) {
         let number = arrayString[i];
         let index = indexSearch(arrayHundreds, number);
@@ -129,14 +115,21 @@ function indexSearch(array, target) {
 //4
 function findDistance(x1, x2, y1, y2) {
     if (isNumbers(x1, x2, y1, y2) === true) {
-        let temporary = findDifference(x1, x2) + findDifference(y1, y2);
+        let temporary = helper(x1, x2) + helper(y1, y2);
         return checkNumberSquareRoot(temporary);
     } else {
         return false;
     }
 }
 
-function findDifference(k1, k2) {
+function helper(k1, k2) {
     return (k2 - k1) * (k2 - k1);
 }
 
+module.exports = {
+    checkNumber,
+    getNameDay,
+    numbersToString,
+    stringToNumber,
+    findDistance
+}

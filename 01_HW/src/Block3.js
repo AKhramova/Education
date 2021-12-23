@@ -15,16 +15,11 @@ function checkArray(array) {
 }
 
 // 1
-function isMinElement(array) {
-    if (checkArray(array) !== false) {
-        return minElement(array);
-    } else {
-        return false;
-    }
-}
-
 function minElement(array) {
     let min = array[0];
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < array.length; i++) {
         if (min > array[i]) {
             min = array[i];
@@ -34,16 +29,11 @@ function minElement(array) {
 }
 
 //2
-function isMaxElement(array) {
-    if (checkArray(array) !== false) {
-        return maxElement(array);
-    } else {
-        return false;
-    }
-}
-
 function maxElement(array) {
     let max = array[0];
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < array.length; i++) {
         if (max < array[i]) {
             max = array[i];
@@ -53,17 +43,12 @@ function maxElement(array) {
 }
 
 //3
-function isMinIndex(array) {
-    if (checkArray(array) !== false) {
-        return minIndex(array);
-    } else {
-        return false;
-    }
-}
-
 function minIndex(array) {
     let min = array[0];
     let index = 0;
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < array.length; i++) {
         if (min > array[i]) {
             min = array[i];
@@ -74,17 +59,12 @@ function minIndex(array) {
 }
 
 //4
-function isMaxIndex(array) {
-    if (checkArray(array) !== false) {
-        return maxIndex(array);
-    } else {
-        return false;
-    }
-}
-
 function maxIndex(array) {
     let max = array[0];
     let index = 0;
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < array.length; i++) {
         if (max < array[i]) {
             max = array[i];
@@ -112,7 +92,7 @@ function reverseArray(array) {
     if (checkArray(array) !== false) {
         let newArray = [];
         for (let i = array.length - 1; i >= 0; i--) {
-            newArray += array[i]
+            newArray.push(array[i]);
         }
         return newArray;
     } else {
@@ -121,16 +101,11 @@ function reverseArray(array) {
 }
 
 //7
-function checkCountOddElements(array) {
-    if (checkArray(array) !== false) {
-        return countOddElements(array);
-    } else {
-        return false;
-    }
-}
-
 function countOddElements(array) {
     let count = 0;
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 === 1) {
             count++;
@@ -140,18 +115,13 @@ function countOddElements(array) {
 }
 
 //8
-function checkReverseArrayHalf(array) {
-    if (checkArray(array) !== false) {
-        return reverseArrayHalf(array);
-    } else {
-        return false;
-    }
-}
-
 function reverseArrayHalf(array) {
     let halfFirst = Math.floor(array.length / 2);
     let halfSecond = array.length - halfFirst;
     let newArray = [];
+    if (checkArray(array) === false) {
+        return false;
+    }
     for (let i = 0; i < halfSecond; i++) {
         newArray[i] = array[i + halfFirst];
     }
@@ -160,21 +130,11 @@ function reverseArrayHalf(array) {
     }
     return newArray;
 }
-
 //9
-function checkSort(array) {
-    if (checkArray(array) !== false) {
-        return bubbleSort(array, array.length - 1);
-        // return selectSort(array);
-        // return insertSort(array);
-        // return quickSort(array, 0, array.length - 1);
-        // return shellSort(array);
-    } else {
-        return false;
-    }
-}
-
 function bubbleSort(array, n) {
+    if (checkArray(array) === false) {
+        return false
+    }
     if (n === 1) {
         return array;
     } else {
@@ -190,7 +150,10 @@ function bubbleSort(array, n) {
     return bubbleSort(array, n - 1);
 }
 
-function selectSort(array, n) {
+function selectSort(array) {
+    if (checkArray(array) === false) {
+        return false
+    }
     for (let i = 0; i < array.length; i++) {
         let min = i;
         for (let j = i; j < array.length; j++) {
@@ -208,6 +171,9 @@ function selectSort(array, n) {
 }
 
 function insertSort(array) {
+    if (checkArray(array) === false) {
+        return false
+    }
     for (let i = 0; i < array.length; i++) {
         let current = array[i];
         let j = i;
@@ -248,6 +214,9 @@ function separationValues(array, left, right) {
 }
 
 function quickSort(array, left, right) {
+    if (checkArray(array) === false) {
+        return false
+    }
     if (array.length > 1) {
         let index = separationValues(array, left, right);
         if (left < index - 1) {
@@ -262,6 +231,9 @@ function quickSort(array, left, right) {
 
 // shell sort
 function shellSort(array) {
+    if (checkArray(array) === false) {
+        return false
+    }
     let midLenght = Math.floor(array.length / 2);
     while (midLenght >= 1) {
         for (let i = midLenght; i < array.length; i++) {
@@ -276,4 +248,21 @@ function shellSort(array) {
         midLenght = Math.floor(midLenght / 2);
     }
     return array;
+}
+
+module.exports = {
+    checkArray,
+    minElement,
+    maxElement,
+    minIndex,
+    maxIndex,
+    isSummaOddIndex,
+    reverseArray,
+    countOddElements,
+    reverseArrayHalf,
+    bubbleSort,
+    selectSort,
+    insertSort,
+    quickSort,
+    shellSort
 }

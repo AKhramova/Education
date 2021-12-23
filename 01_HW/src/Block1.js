@@ -21,16 +21,15 @@ function isEvenOrOdd(a, b) {
 }
 
 //2
-function quarterCoordinates(x, y) {
+function checkCoordinates(x, y) {
     if (isNumbers(x, y) === false) {
         return false;
-    } else {
-        return checkCoordinates(x, y);
     }
-}
-
-function checkCoordinates(x, y) {
     switch (true) {
+        case x === 0 && y !== 0:
+            return 'abscissa';
+        case x !== 0 && y === 0:
+            return 'ordinate';
         case x === 0 && y === 0:
             return 'Start coordinates';
         case x > 0 && y > 0:
@@ -109,6 +108,10 @@ function grades(number) {
 }
 
 module.exports = {
-    isNumbers
+    isNumbers,
+    isEvenOrOdd,
+    checkCoordinates,
+    summaNumbers,
+    findMax,
+    isGrades
 }
-

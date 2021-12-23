@@ -5,37 +5,30 @@ let {
 
 //1
 function resultSummaRange(startNumber, finalNumber) {
+    let result = 0;
+    let count = 0;
     if (isNumbers(startNumber, finalNumber) === false) {
         return false;
     }
     if (startNumber !== 1 || finalNumber !== 99) {
         return false;
     }
-    return summaInRange(startNumber, finalNumber);
-
-}
-
-function summaInRange(startNumber, finalNumber) {
-    let result = 0;
     for (let i = startNumber; i <= finalNumber; i++) {
         result += i;
+        count++;
     }
-    return result;
+    return result + ', ' + count;
+
 }
 
 //2
-function resultPrimeNumber(number) {
+function checkPrimeNumber(number) {
     if (isNaN(number) === true) {
         return false;
     }
     if (number <= 1) {
         return false;
-    } else {
-        return checkPrimeNumber(number);
     }
-}
-
-function checkPrimeNumber(number) {
     for (let i = 2; i <= number; i++) {
         if (number % i === 0) {
             return false;
@@ -47,24 +40,26 @@ function checkPrimeNumber(number) {
 
 //3
 function checkNumberSquareRoot(number) {
+    let i = 1;
     if (isNaN(number) === true) {
         return false;
     }
-    if (number < 0) {
+    if (number <= 0) {
         return false;
     }
-    //    return squareRootConsistentSelection(number); //последовательного подбора 
-    return squareRootBinarySearch(number); //метод бинарного поиска
+    while (i * i <= number) {
+        i++;
+    } return i - 1
 }
 
-function squareRootConsistentSelection(number) {
-    for (let i = 0; i * i <= number; i++) {
-    }
-    return i - 1;
-}
-
-function squareRootBinarySearch(number) {
+function checkSquareRootBinarySearch(number) {
     let intermediateNumber = number;
+    if (isNaN(number) === true) {
+        return false;
+    }
+    if (number <= 0) {
+        return false;
+    }
     while (intermediateNumber * intermediateNumber > number) {
         intermediateNumber /= 2;
     }
@@ -75,7 +70,8 @@ function squareRootBinarySearch(number) {
 }
 
 //4
-function checkNumbers(number) {
+function checkFactorialNumber(number) {
+    let result = 1;
     if (isNaN(number) === true) {
         return false;
     }
@@ -85,11 +81,6 @@ function checkNumbers(number) {
     if (number % 1 !== 0) {
         return false;
     }
-    return true;
-}
-
-function factorialNumber(number) {
-    let result = 1;
     while (number !== 0) {
         result *= number;
         number--;
@@ -97,25 +88,15 @@ function factorialNumber(number) {
     return result;
 }
 
-function checkFactorialNumber(number) {
-    if (checkNumbers(number) !== false) {
-        return factorialNumber(number);
-    }
-    return false
-}
-
 //5
-function checkSummaDigits(number) {
+function summaDigits(number) {
+    let summa = 0;
     if (isNaN(number) === true) {
         return false;
     }
     if (number % 1 !== 0) {
         return false;
     }
-    return summaDigits(number);
-}
-function summaDigits(number) {
-    let summa = 0;
     while (number) {
         summa += number % 10;
         number = (number - number % 10) / 10;
@@ -124,17 +105,14 @@ function summaDigits(number) {
 }
 
 //6
-function checkNewNumber(number) {
+function getNewNumber(number) {
+    let result = '';
     if (isNaN(number) === true) {
         return false;
     }
     if (number % 1 !== 0) {
         return false;
     }
-    return newNumber(number);
-}
-function newNumber(number) {
-    let result = '';
     while (number) {
         result += number % 10;
         number = (number - number % 10) / 10;
@@ -143,6 +121,11 @@ function newNumber(number) {
 }
 
 module.exports = {
+    resultSummaRange,
+    checkPrimeNumber,
     checkNumberSquareRoot,
-    checkNumbers
+    checkSquareRootBinarySearch,
+    checkFactorialNumber,
+    summaDigits,
+    getNewNumber
 }
