@@ -1,0 +1,13 @@
+{
+  "name": "02_stars",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Khramova",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.4.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
