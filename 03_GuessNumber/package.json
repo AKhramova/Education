@@ -16,6 +16,7 @@
     "watch": "yarn cmd watch"
   },
   "devDependencies": {
-    "@types/gulp": "^4.0.9"
+    "@types/gulp": "^4.0.9",
+    "gulp-concat": "^2.6.1"
   }
 }
