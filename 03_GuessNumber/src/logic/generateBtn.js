@@ -21,5 +21,3 @@ function generateFunction(min, max, attempt, sad) {
 document.getElementById('generate').addEventListener('click', () => {
     generateFunction(minValue.value, maxValue.value, attempts.value, sad);
 });
-
-

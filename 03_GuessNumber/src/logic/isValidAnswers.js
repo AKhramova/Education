@@ -2,7 +2,7 @@ function isValidAnswer(min, max, isAnswer) {
     if (isAnswer % 1 !== 0) {
         return false;
     }
-    if (isAnswer < 0) {
+    if (isAnswer <= 0) {
         return false;
     }
     if (isAnswer < min) {
@@ -13,6 +13,7 @@ function isValidAnswer(min, max, isAnswer) {
     }
     return true
 }
+
 // module.exports = {
 //     isValidAnswer
 // }

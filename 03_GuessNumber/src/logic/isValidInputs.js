@@ -3,7 +3,7 @@ function isValidInput(min, max, attempt) {
         if (arguments[i] % 1 !== 0) {
             return false;
         }
-        if (arguments[i] < 0) {
+        if (arguments[i] <= 0) {
             return false;
         }
     }
@@ -15,6 +15,6 @@ function isValidInput(min, max, attempt) {
     }
 }
 
-module.exports = {
-    isValidInput
-}
+// module.exports = {
+//     isValidInput
+// }
