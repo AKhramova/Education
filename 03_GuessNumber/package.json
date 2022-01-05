@@ -13,10 +13,12 @@
   "scripts": {
     "cmd": "gulp",
     "build": "yarn cmd default",
-    "watch": "yarn cmd watch"
+    "watch": "yarn cmd watch",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.9",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "jest": "^27.4.6"
   }
 }
