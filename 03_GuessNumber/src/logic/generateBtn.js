@@ -11,7 +11,6 @@ function generateFunction(min, max, attempt, sad) {
         maxValue.disabled = true;
         attempts.disabled = true;
         generate.disabled = true;
-        console.log(rand);
         play.disabled = false;
     } else {
         infoText.innerHTML = 'Вы не правильно ввели значение ' + sad;

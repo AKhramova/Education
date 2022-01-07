@@ -20,7 +20,7 @@ gulp.task('copy:html', function (cb) {
     cb();
 })
 gulp.task('copy:js', function (cb) {
-    gulp.src('./src/**/**.js')
+    gulp.src('./src/logic/**.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist'))
     cb();
