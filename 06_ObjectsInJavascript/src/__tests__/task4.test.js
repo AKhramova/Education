@@ -6,7 +6,7 @@ describe('task4', function () {
     })
 });
 
-describe('task3, answer is correct', function () {
+describe('task4, answer is correct', function () {
     test.each([
         ['sparrow', { s: 1, p: 1, a: 1, r: 2, o: 1, w: 1 }],
         ['aabcddeffge', { a: 2, b: 1, c: 1, d: 2, e: 2, f: 2, g: 1 }],
