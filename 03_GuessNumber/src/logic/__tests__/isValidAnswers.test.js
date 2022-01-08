@@ -1,4 +1,4 @@
-const { isValidAnswer } = require('../isValidAnswers');
+const { isValidAnswer } = require('../isValidAnswer');
 
 describe('isValidAnswer to be false', () => {
     test.each([

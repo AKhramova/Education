@@ -14,6 +14,4 @@ function isValidAnswer(min, max, isAnswer) {
     return true
 }
 
-// module.exports = {
-//     isValidAnswer
-// }
+module.exports = { isValidAnswer }

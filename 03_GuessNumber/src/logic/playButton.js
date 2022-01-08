@@ -1,28 +1,31 @@
-function checkAnswer(count, attemptValue, rand, answerValue) {
-    if (count !== attemptValue) {
-        if (answerValue === rand) {
-            infoText.innerHTML = `Поздравляю! Ты угадал задуманное число за ${count} раза`;
-            document.getElementById('play').disabled = true;
-        } else if (answerValue > rand) {
-            infoText.innerHTML = `Большое, введи меньше число. У тебя осталось: ${attemptValue - count} попыток`;
-        } else if (answerValue < rand) {
-            infoText.innerHTML = `Число маленькое, введи больше. У тебя осталось:  ${attemptValue - count} попыток`;
+const { isValidAnswer } = require('./isValidAnswer');
+function checkAnswer(state) {
+    if (state.count !== state.attempts) {
+        if (state.answer === state.rand) {
+            setHTMLValue('infoText', `Поздравляю! Ты угадал задуманное число за ${state.count} раза`);
+            inputDisabled('play', true);
+        } else if (state.answer > state.rand) {
+            setHTMLValue('infoText', `Большое, введи меньше число. У тебя осталось: ${state.attempts - state.count} попыток`);
+        } else if (state.answer < state.rand) {
+            setHTMLValue('infoText', `Число маленькое, введи больше. У тебя осталось:  ${state.attempts - state.count} попыток`);
         }
     } else {
-        infoText.innerHTML = `Вы не угадал число` + sad + 'Попробуйте снова)';
-        play.disabled = true;
-        generate.disabled = false;
+        setHTMLValue('infoText', `Вы не угадал число` + '\u{2639}' + 'Попробуйте снова)');
+        inputDisabled('play', true);
+        inputDisabled('generate', true);
     }
 }
 
-document.getElementById('play').addEventListener('click', () => {
-    let attemptValue = Number(attempts.value);
-    let answerValue = Number(answer.value);
-    count++;
-    if (isValidAnswer(minValue.value, maxValue.value, answerValue)) {
-        return checkAnswer(count, attemptValue, rand, answerValue);
+function playGame(state) {
+    state.minValue = inputValueGet('minValue');
+    state.maxValue = inputValueGet('maxValue');
+    state.attempts = Number(inputValueGet('attempts'));
+    state.answer = Number(inputValueGet('answer'));
+    state.count++;
+    if (isValidAnswer(state.minValue, state.maxValue, state.answer)) {
+        return checkAnswer(state);
     } else {
-        infoText.innerHTML = 'Вы допустили ошубку при вводу ответа' + sad;
-        count--;
+        setHTMLValue('infoText', 'Вы допустили ошубку при вводе ответа' + '\u{2639}');
+        state.count--;
     }
-})
+}

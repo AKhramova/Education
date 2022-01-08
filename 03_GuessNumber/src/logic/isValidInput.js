@@ -15,6 +15,4 @@ function isValidInput(min, max, attempt) {
     }
 }
 
-// module.exports = {
-//     isValidInput
-// }
+module.exports = { isValidInput }

@@ -1,22 +1,44 @@
-function randomNumber(min, max) {
-    const randomValue = Math.random() * (max - min) + min;
-    return Math.ceil(randomValue);
+const { inputValueSet, setHTMLValue, inputValueGet, addListener, randomNumber, inputDisabled } = require("./utils");
+const { isValidInput } = require('./isValidInput');
+
+document.addEventListener('DOMContentLoaded', function () {
+    init();
+})
+
+function init() {
+    const state = {
+        minValue: 1,
+        maxValue: 100,
+        attempts: 5,
+        count: 0,
+        answer: null,
+        rand: null,
+        isGenerate: true
+    };
+    addListener('generate', 'click', generateFunction.bind(null, state));
+    addListener('play', 'click', playGame.bind(null, state));
+    addListener('exit', 'click', exitFunc.bind(null, state));
 }
 
-function generateFunction(min, max, attempt, sad) {
-    rand = randomNumber(minValue.value, maxValue.value);
-    if (isValidInput(min, max, attempt) !== false) {
-        helloText.innerHTML = `Привет, я загадал число от ${min} до ${max} вашего диапазона.Попробуй угадать его за ${attempt} попыток!`;
-        minValue.disabled = true;
-        maxValue.disabled = true;
-        attempts.disabled = true;
-        generate.disabled = true;
-        play.disabled = false;
+function generateFunction(state) {
+    state.minValue = inputValueGet('minValue');
+    state.maxValue = inputValueGet('maxValue');
+    state.attempts = inputValueGet('attempts');
+    state.answer = inputValueGet('answer');
+    if (isValidInput(state.minValue, state.maxValue, state.attempts) !== false) {
+        if (state.isGenerate) {
+            state.rand = randomNumber(state.minValue, state.maxValue);
+        }
+        const text = `Привет, я загадал число от ${state.minValue} до ${state.maxValue} вашего диапазона.Попробуй угадать его за ${state.attempts} попыток!`;
+        setHTMLValue('helloText', text);
+        setHTMLValue('infoText', '');
+        inputDisabled('minValue', true);
+        inputDisabled('maxValue', true);
+        inputDisabled('attempts', true);
+        inputDisabled('generate', true);
+        inputDisabled('play', false);
+        state.isGenerate = false;
     } else {
-        infoText.innerHTML = 'Вы не правильно ввели значение ' + sad;
+        setHTMLValue('infoText', 'Вы не правильно ввели значение ' + '\u{2639}');
     }
 }
-
-document.getElementById('generate').addEventListener('click', () => {
-    generateFunction(minValue.value, maxValue.value, attempts.value, sad);
-});

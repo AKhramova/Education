@@ -1,4 +1,4 @@
-const { isValidInput } = require('../isValidInputs');
+const { isValidInput } = require('../isValidInput');
 
 describe('isValidInput to be false', () => {
     test.each([
