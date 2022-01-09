@@ -13,12 +13,6 @@ let cache = function () {
     }
 }
 
-
-var cachedFunc = cache(complexFunction);
-console.log(cachedFunc('foo', "bar"));// foo bar
-console.log(cachedFunc('foo', "bar"));//In cache: foo bar
-console.log(cachedFunc('foo', "baz"));// foo baz
-
 module.exports = {
     complexFunction,
     cache

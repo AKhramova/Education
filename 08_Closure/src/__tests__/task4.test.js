@@ -1,7 +1,12 @@
 const { complexFunction, cache } = require('../task4');
 
-describe('Task4, correct answer', function () {
-    test('arguments are not correct', function () {
-        expect(getQunitityPostsByAuthor(listOfPosts2, 'Rimus')).toBe('post - 1, comments - 3');
+describe('Task4', function () {
+    let cachedFunc = cache(complexFunction);
+    test.each([
+        ['foo', 'bar', 'foo bar'],
+        ['foo', 'bar', 'foo bar in chache'],
+        ['foo', 'baz', 'foo baz'],
+    ])('testing arguments %s %s with expected result %s', function (arg1, arg2, result) {
+        expect(cachedFunc(arg1, arg2)).toBe(result);
     })
 })
