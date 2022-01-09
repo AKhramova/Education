@@ -1,6 +1,6 @@
 const { getSum } = require('../task2');
 
-describe('Task1', function () {
+describe('Task2', function () {
     test('arguments are not correct', function () {
         expect(getSum()).toBe(false);
     })
