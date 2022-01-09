@@ -1,14 +1,22 @@
-const min = document.getElementById('min');
-const max = document.getElementById('max');
-const generate = document.getElementById('generate');
-const info = document.getElementById('info');
-const reset = document.getElementById('reset');
-let mainInfo = 'Generate number: ';
-let isGenerate = false;
-let arrayValue = [];
-let arrayAnswer = [];
+const { setHTMLValue, inputValueGet, addListener, randomNumber, inputDisabled } = require("./utils");
+
+document.addEventListener('DOMContentLoaded', function () {
+    init();
+})
+
+function init() {
+    let state = {
+        min: 1,
+        max: 100,
+        isGenerate: false,
+        arrayAnswer: []
+    };
+    addListener('generate', 'click', generateFunc.bind(null, state));
+    addListener('reset', 'click', reset.bind(null, state));
+}
+
 function isNumber(min, max) {
-    for (let i = 0; i < arguments.length; i++){
+    for (let i = 0; i < arguments.length; i++) {
         if (arguments[i] < 0) {
             return false;
         }
@@ -21,49 +29,50 @@ function isNumber(min, max) {
     }
 }
 
-function randomNumber(start, finised) {
-    return Math.floor(Math.random() * (finised - start) + start);
-}
-
-function createArrayValue(minV, maxV) {
-    if (!isGenerate) {
-        for (var i = 0; i <= maxV - minV; i++) {
-            arrayValue[i] = minV + i;
-        }
-        isGenerate = true;
+function arrValues(a, b) {
+    let arrayValue = [];
+    for (let i = a; i <= b; i++) {
+        arrayValue.push(i);
     }
     return arrayValue;
 }
 
-function randomAnswer(min, max, arr) {
-    let random = randomNumber(min, max);
-    arrayAnswer.push(arr[random]);
-    arr.splice(random, 1);
+function randomAnswer(max, arrayValue, arrayAnswer) {
+    let random = randomNumber(0, max);
+    arrayAnswer.push(arrayValue[random]);
+    arrayValue.splice(random, 1);
     return arrayAnswer;
 }
-generate.addEventListener('click', () => {
-    const minValue = Number(min.value);
-    const maxValue = Number(max.value);
-    if (isNumber(minValue, maxValue) !== false) {
-        min.disabled = true;
-        max.disabled = true;
-        arrayValue = createArrayValue(minValue, maxValue);
-        if (arrayValue.length !== 0) {
-            info.innerHTML = mainInfo + randomAnswer(0, arrayValue.length, arrayValue);
+
+function generateFunc(state) {
+    state.min = Number(inputValueGet('min'));
+    state.max = Number(inputValueGet('max'));
+    if (!state.isGenerate) {
+        array = arrValues(state.min, state.max);
+        state.isGenerate = true;
+    }
+    if (isNumber(state.min, state.max) !== false) {
+        inputDisabled('min', true);
+        inputDisabled('max', true);
+        if (array.length !== 0) {
+            setHTMLValue('info', `Generate number: ${randomAnswer(array.length, array, state.arrayAnswer)}`);
         } else {
-            generate.disabled = true;
-            info.innerHTML = mainInfo + ' Elements are over';
+            inputDisabled('generate', true);
+            setHTMLValue('info', 'Generate number: Elements are over');
         }
     } else {
-        info.innerHTML = 'Incorrect data';
+        setHTMLValue('info', 'Incorrect data');
     }
-})
-reset.addEventListener('click', () => {
-    min.disabled = false;
-    max.disabled = false;
-    generate.disabled = false;
-    info.innerHTML = '';
-    isGenerate = false;
-    arrayAnswer = [];
-    arrayValue = [];
-})
+}
+
+function reset(state) {
+    inputDisabled('min', false);
+    inputDisabled('max', false);
+    inputDisabled('generate', false);
+    setHTMLValue('info', '');
+    state.isGenerate = false;
+    state.arrayAnswer = [];
+    array = [];
+}
+
+module.exports = { init, isNumber, arrValues, randomAnswer, generateFunc, reset }
