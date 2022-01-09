@@ -1,13 +1,13 @@
 const { getTickets } = require('../task1');
 
 describe('Task1, check data', function () {
-    it('is not array', function () {
+    test('is not array', function () {
         expect(getTickets(16)).toBe(false);
     })
-    it('array not of numbers', function () {
+    test('array not of numbers', function () {
         expect(getTickets(['test'])).toBe(false);
     })
-    it('numbers in array are not divisible by 25', function () {
+    test('numbers in array are not divisible by 25', function () {
         expect(getTickets([24, 25, 50])).toBe(false);
     })
 })
