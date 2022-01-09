@@ -71,8 +71,8 @@ describe('Task3 arguments are not correct', function () {
     })
 })
 
-describe('Task3, correct answer', function () {
-    test('arguments are not correct', function () {
+describe('Task3', function () {
+    test('correct answer', function () {
         expect(getQunitityPostsByAuthor(listOfPosts2, 'Rimus')).toBe('post - 1, comments - 3');
     })
 })
