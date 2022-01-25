@@ -43,20 +43,6 @@ const paths = {
     },
 };
 
-// const verify = () => {
-//     const write = (file, enc, cb) => {
-//         console.log('file', file.path);
-//         cb(null, file);
-//     };
-
-//     const end = (cb) => {
-//         console.log('done');
-//         cb();
-//     };
-
-//     return through({objectMode: true}, write, end);
-// };
-
 const styles = (paths, outputFilename, outputPath) => {
     return gulp
         .src(paths)
@@ -91,7 +77,6 @@ gulp.task('copy', (cb) => {
     gulp
         .src(paths.src.public)
         .pipe(copy(paths.build.root, {prefix: 1}))
-        // .pipe(verify());
     cb()
 });
 
@@ -104,11 +89,6 @@ gulp.task('scripts', (cb) => {
     scripts([paths.src.js], 'index.js', paths.build.js, false);
     cb();
 });
-
-// gulp.task('img', (cb) => {
-//     gulp.src(paths.src.img, {since: gulp.lastRun('img')}).pipe(gulp.dest(paths.build.img));
-//     cb()
-// });
 
 gulp.task('fileInclude', (cb) => {
     gulp.src([SRC + '/html/index.html'])
@@ -123,15 +103,12 @@ gulp.task('watch', () => {
     gulp.watch(paths.compileWatch.html, gulp.series('fileInclude'));
     gulp.watch(paths.compileWatch.scss, gulp.series('styles'));
     gulp.watch(paths.compileWatch.js, gulp.series('scripts'));
-    // gulp.watch(paths.compileWatch.img, gulp.series('img'));
 });
 
 gulp.task('serve', () => {
     browserSync.init({ server: { baseDir: './build/' } });
-
     browserSync.watch(paths.reloadWatch.css).on('change', browserSync.reload);
     browserSync.watch(paths.reloadWatch.js).on('change', browserSync.reload);
-    // browserSync.watch(paths.reloadWatch.img).on('change', browserSync.reload);
     browserSync.watch(paths.reloadWatch.html).on('change', browserSync.reload);
 });
 
