@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<table class="main-block">
+		<caption class="main-block__display display">
+			<div class="display__output output">
+				<button class="output__switch" id="switch">&orarr;</button>
+				<input id="current" class="output__current" readonly>
+			</div>
+		</caption>
+		<tbody class="engineering" id="engineer">
+			<tr>
+				<td><button data-number value="(" disabled>(</button></td>
+				<td><button data-number value=")" disabled>)</button></td>
+				<td><button disabled>mc</button></td>
+				<td><button disabled>m+</button></td>
+				<td><button disabled>m-</button></td>
+				<td><button disabled>mr</button></td>
+			</tr>
+			<tr>
+				<td><button data-engineering value="module">|x|</button></td>
+				<td><button data-engineering value="x2">x&sup2;</button></td>
+				<td><button data-engineering value="x3">x&sup3;</button></td>
+				<td><button data-operations value="^">x<sup>y</sup></button></td>
+				<td><button data-engineering value="exp">e<sup>x</sup></button></td>
+				<td><button data-engineering value="10x">10<sup>x</sup></button></td>
+			</tr>
+			<tr>
+				<td><button data-engineering value="1/x"><i><sup>1</sup></i>/<i><sub>x</sub></i></button></td>
+				<td><button data-engineering value="2radicX">2&radic;x</button></td>
+				<td><button data-engineering value="3radicX">3&radic;x</button></td>
+				<td><button data-operations value="yRadicX">y&radic;x</button></td>
+				<td><button data-engineering value="ln">ln</button></td>
+				<td><button data-engineering value="log">log</button></td>
+			</tr>
+			<tr>
+				<td><button data-engineering value="factorail">x!</button></td>
+				<td><button data-engineering value="sin">sin</button></td>
+				<td><button data-engineering value="cos">cos</button></td>
+				<td><button data-engineering value="tan">tan</button></td>
+				<td><button data-engineering value="e">e</button></td>
+				<td><button>EE</button></td>
+			</tr>
+			<tr>
+				<td><button data-operations value="mod">mod</button></td>
+				<td><button data-engineering value="sinh">sinh</button></td>
+				<td><button data-engineering value="cosh">cosh</button></td>
+				<td><button data-engineering value="tanh">tanh</button></td>
+				<td><button data-engineering value="pi">&pi;</button></td>
+				<td><button data-engineering id="rand" value="rand">Rand</button></td>
+			</tr>
+		</tbody>
+		<tr class="main-block__functional functional">
+			<td><button id="clear">AC</button></td>
+			<td><button data-delete id="delete">&larr;</button></td>
+			<td><button id="percent" value="%">%</button></td>
+			<td><button data-operations value="/">&divide;</button></td>
+		</tr>
+		<tr>
+			<td><button class="number" data-number value="7">7</button></td>
+			<td><button class="number" data-number value="8">8</button></td>
+			<td><button class="number" data-number value="9">9</button></td>
+			<td><button data-operations value="*">&times;</button></td>
+		</tr>
+		<tr>
+			<td><button class="number" data-number value="4">4</button></td>
+			<td><button class="number" data-number value="5">5</button></td>
+			<td><button class="number" data-number value="6">6</button></td>
+			<td><button data-operations value="-">-</button></td>
+		</tr>
+		<tr>
+			<td><button class="number" data-number value="1">1</button></td>
+			<td><button class="number" data-number value="2">2</button></td>
+			<td><button class="number" data-number value="3">3</button></td>
+			<td><button data-operations value="+">+</button></td>
+		</tr>
+		<tr>
+			<td><button id="sing-change">&plusmn;</button></td>
+			<td><button class="number" data-number value="0">0</button></td>
+			<td><button data-number value=".">.</button></td>
+			<td><button id="equals">=</button></td>
+		</tr>
+	</table>
+	<script src="js/index.js"></script>
+</body>
+</html>

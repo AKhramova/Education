@@ -1,0 +1,101 @@
+@import "vars";
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Montserrat, 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bg-body;
+}
+
+tbody {
+  display: block; 
+  float: left; 
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: large;
+  width: 70px;
+  height: 40px;
+  background-color: $bg-bth-color;
+  &:focus{
+    border-radius: 10px;
+    background-color: $btn-focus-color;
+  }
+  &:disabled{
+    cursor: not-allowed;
+  }
+}
+
+.main-block{
+  background-color: $bg-main-block;
+  margin: 30vh auto;
+  border-radius: 0 0 10px 10px;
+}
+
+.display{
+  &__output{
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    outline: none;
+    border: none;
+    cursor: auto;
+    font-size: x-large;
+    text-align: right;
+  }
+  &__switch{
+    background-color: $bg-main-block;
+  }
+}
+
+.output{
+  padding: 7px;
+  &__switch{
+    width: auto;
+    height: auto;
+    background: transparent;
+    float: left;
+  }
+  &__current{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: large;
+    text-align: right;
+  }
+  // &__previous{
+  //   font-size: large;
+  // }
+}
+
+
+.engineering{
+  position: absolute;
+	top: -100%;
+}
+
+.number{
+  background-color: $bg-btn-number-color;
+}
+
+.rorate{
+ transform: rotate(180deg);
+}
+
+.show{
+  position: relative;
+  top: 100%;
+}
