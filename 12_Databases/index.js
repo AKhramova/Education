@@ -17,7 +17,7 @@ connection.connect(function (err) {
 });
 
 //task 1
-// const getData = "SELECT COUNT(1) AS count FROM hwsql.person;"; 
+const getData = "SELECT COUNT(1) AS count FROM hwsql.person;"; 
 
 //task 2
 // const getData = "SELECT AVG(Age) AS Age FROM hwsql.person;"; 
@@ -41,7 +41,6 @@ connection.connect(function (err) {
 // const getData = `SELECT hwsql.street.id, hwsql.street.name, COUNT(hwsql.person.id) FROM hwsql.street 
 //     JOIN hwsql.person ON hwsql.street.id = hwsql.person.id_street GROUP BY hwsql.street.id, hwsql.street.name;`;
 
-
 //task 9
 // const getData = "SELECT * FROM hwsql.street where length(name) = 6;";
 
@@ -49,14 +48,8 @@ connection.connect(function (err) {
 // const getData = `SELECT hwsql.street.id, hwsql.street.name FROM hwsql.street JOIN hwsql.person
 //     ON hwsql.street.id = hwsql.person.id_street GROUP BY hwsql.street.id, hwsql.street.name HAVING COUNT(hwsql.person.id) < 3;`;
 
-
-
-
-
-
-
 connection.query(getData, (err, res) => {
     if (!err) {
-        console.log(res)
+        console.log(res);
     }
 })
