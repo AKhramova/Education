@@ -8,7 +8,10 @@
     "test": "jest"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "globals": {
+      "__DEV__": true
+    }
   },
   "dependencies": {
     "@babel/core": "7.16.7",

@@ -14,3 +14,9 @@ jest.mock('../utils.js', () => {
         randomValueMadeNumber: jest.fn(() => 0),
     };
 });
+
+describe('test', function () {
+    test('test', () => {
+        expect().toBe();
+    });
+})

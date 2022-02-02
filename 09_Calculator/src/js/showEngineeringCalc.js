@@ -1,16 +1,18 @@
 let isEngineer = true;
 document.addEventListener('DOMContentLoaded', function () {
-    addListener('switch', 'click', showEngineering);
+    addListener('switch', 'click', showEngineering.bind(null, getNode('switch'), getNode('engineer')));
 })
 
-function showEngineering() {
+function showEngineering(switchBtn, engineer) {
     if (isEngineer) {
-        getNode('switch').classList.add('rorate');
-        getNode('engineer').classList.add('show');
+        switchBtn.classList.add('rorate');
+        engineer.classList.add('show');
         isEngineer = false;
     } else {
-        getNode('switch').classList.remove('rorate');
-        getNode('engineer').classList.remove('show');
+        switchBtn.classList.remove('rorate');
+        engineer.classList.remove('show');
         isEngineer = true;
     }
 }
+
+module.exports = { showEngineering }

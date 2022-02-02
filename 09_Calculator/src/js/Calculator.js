@@ -67,7 +67,6 @@ class Engineering extends Calculator {
     returnValue(valueBtn) {
         switch (valueBtn) {
             case 'rand':
-                // this.current = (Math.random() * 1).toFixed(2);
                 this.current = randomNumber();
                 break;
             case 'pi':
