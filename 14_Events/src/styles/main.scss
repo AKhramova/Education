@@ -1,0 +1,107 @@
+@import './vars';
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button{
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+::-webkit-scrollbar {
+    width: 45%;
+    height: 10px;
+    background-color: $bg-scroll;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-scroll;
+    border-radius: 7px;
+}
+
+.content{
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color;
+  &__btn{
+    float: right;
+    margin: 2%;
+    width: 5%;
+    height: 25px;
+    border-radius: 5px;
+    background-color: $bg-btn;
+    &:hover{
+      background-color: $btn-hover;
+    }
+  }
+  &__main{
+    width: 70%;
+    height: 78%;
+    margin: auto;
+  }
+  &__all-photos{
+    width: 100%;
+    height: 22%;
+    background-color: $bg-all-photos;
+    display: flex;
+    overflow-x: scroll;
+  }
+  &__slider{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin-top: -200vh;
+    background-color: $bg-slider;
+  }
+}
+
+.main{
+  &__photo{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.all-photos{
+  &__img{
+    width: 15%;
+    height: 100%;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.3);
+    }
+  }
+}
+
+.slider{
+  &__btn{
+    background-color: transparent;
+    color: aliceblue;
+    float: right;
+    margin: 2%;
+    font-size: x-large;
+  }
+  &__btn-pause{
+    float: right;
+    margin: 2%;
+    font-size: x-large;
+    border-radius: 5px;
+    background-color: $bg-btn;
+    &:hover{
+      background-color: $btn-hover;
+    }
+  }
+  &__img{
+    width: 70%;
+    height: 80%;
+    margin: -1% 15%;
+    background-color: hotpink;
+  }
+}
+
+.view{
+  margin-top: -100vh;
+}
