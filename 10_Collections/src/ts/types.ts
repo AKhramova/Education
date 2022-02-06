@@ -20,20 +20,20 @@ export interface IList{
     print: () => void
 }
 
-// export interface ITree{
-//     init: (array) => void;
-//     clear: () => void;
-//     size: () => number;
-//     insert: (value) => void;
-//     print: (node, cb) => void;
-//     toArray: () => [];
-//     search: (value) => any;
-//     width: () => number;
-//     height: () => number;
-//     nodes: () => number;
-//     leaves: () => number;
-//     reverse: () => void;
-//     minNode: () => any;
-//     maxNode: () => any;
-//     remove: (value) => any;
-// }
+export interface ITree{
+    init: (array) => void;
+    clear: () => void;
+    size: () => number;
+    insert: (value) => void;
+    print: (node, cb) => void;
+    toArray: () => number[];
+    search: (value) => any;
+    width: () => number;
+    height: () => number;
+    nodes: () => number;
+    leaves: () => number;
+    reverse: () => void;
+    minNode: () => any;
+    maxNode: () => any;
+    remove: (value) => any;
+}
