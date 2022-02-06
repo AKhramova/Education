@@ -1,0 +1,54 @@
+@import "vars";
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Montserrat, 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bg-body;
+}
+
+.main{
+  width: 800px;
+  height: 80vh;
+  margin: 10vh auto;
+  &__panel{
+    height: 10%;
+    background-color: $bg-panel;
+    border-radius: 10px 10px 0 0;
+  }
+  &__canvas{
+    background-color: white;
+  }
+}
+
+.panel{
+  display: flex;
+  &__color, &__slider{
+    margin: auto;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue;
+  }
+  &__clear, &__picture, &__json{
+    margin: auto;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    &:hover{
+      background-color: $bg-btn-hover;
+    }
+    &:focus{
+      background-color: $bg-btn-focus;
+    }
+  }
+}
