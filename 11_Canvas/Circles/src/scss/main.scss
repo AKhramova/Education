@@ -1,0 +1,20 @@
+@import "vars";
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+}
+
+.block-canvas{
+  background-color: $bg-color;
+  cursor: pointer;
+}
