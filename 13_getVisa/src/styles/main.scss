@@ -1,0 +1,101 @@
+@import './vars.scss';
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: $bg-main;
+}
+
+input, button, select{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: large;
+}
+button, select{
+    cursor: pointer;
+}
+
+input, select{
+    width: 250px;
+    margin: 0 40px;
+    text-align: center;
+}
+
+input{
+    cursor: not-allowed;
+}
+label{
+    font-size: x-large;
+}
+
+.section-info{
+    width: 41%;
+    height: 100%;
+    margin: auto 30%;
+    &__create{
+        background-color: $bg-block;
+        border-radius: 15px;
+    }
+    &__show-info{
+        display: none;
+    }
+}
+
+.create{
+    &__field{
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__panel{
+        height: 50px;
+    }
+}
+
+.panel{
+    background-color: $bg-panel;
+    border-radius:  0 0 15px 15px;
+    &__btn{
+        padding: 10px;
+        margin: 5px 17px;
+        &:hover{
+            background-color: $btn-hover;
+        }
+        &:focus{
+            background-color: $btn-focus;
+        }
+    }
+}
+.show-info{
+    &__table{
+        width: 100%;
+    }
+}
+
+td, th{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+.table{
+    &__name{
+        margin: 10px 0;
+        font: 24px cursive;
+    }
+    &__error{
+        font: 30px cursive;
+        text-align: center;
+    }
+}
+
+.show{
+    display: block;
+}
+
+.canvas{
+    display: none;
+    margin: -20% 20% auto 20%;
+    background-color: #F1F7ED;
+}

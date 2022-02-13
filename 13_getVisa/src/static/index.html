@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getVisa</title>
+</head>
+<body>
+    <section class="section-info">
+        <section class="section-info__create create">
+            <section class="create__field">
+                <label >Name <input id="name" data-inpt readonly></label>
+                <button data-btn name="name">Generate</button>
+            </section>
+            <section class="create__field">
+                <label>Balance <input id="balance" data-inpt readonly></label>
+                <button data-btn name="balance">Generate</button>
+            </section>
+            <section class="create__field">
+                <label>Age <input id="age" data-inpt readonly></label>
+                <button data-btn name="age">Generate</button>
+            </section>
+            <section class="create__field">
+                <label>Documents <input id="documents" data-inpt readonly></label>
+                <button data-btn name="documents">Generate</button>
+            </section>
+            <section class="create__field">
+                <label>English level <input id="englishLevel" data-inpt readonly></label>
+                <button data-btn name="levelEnglish">Generate</button>
+            </section>
+            <section class="create__panel panel">
+                <button class="panel__btn" id="generateAll">Generate All</button>
+                <button class="panel__btn" id="addCandidate" disabled>Add candidate</button>
+                <button class="panel__btn" id="init">Init</button>
+                <button class="panel__btn" id="race">Race</button>
+                <button class="panel__btn" id="clear">Clear</button>
+            </section>
+        </section>
+        <section class="section-info__show-info show-info" id="table">
+            <table class="show-info__table table" id="table-info">
+            </table>
+        </section>
+    </section>
+    <canvas class="canvas" id="canvas" width="900" height="500"></canvas>
+</body>
+</html>
