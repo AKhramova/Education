@@ -199,13 +199,13 @@ export class AList implements IList{
     };
 
     print(): string{
-        // for (var i = 0; i < this.array.length; i++){
+        // for (let i = 0; i < this.array.length; i++){
         //     console.log(this.array[i]);
         // }
 
         //for tests
         let str = '';
-        for(var i = 0; i < this.array.length; i++){
+        for(let i = 0; i < this.array.length; i++){
             if (this.array[i] !== undefined) {
                 str = `${str} ${this.array[i]}`;
             }
